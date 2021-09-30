@@ -83,7 +83,7 @@ td {
 
 /* constrols */
 .controls {
-  position: absolute;
+  position: fixed;
   right: 2px;
   bottom: 2px;
 }
