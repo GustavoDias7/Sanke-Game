@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <div class="container">
+        <h1>Snake Game</h1>
+      </div>
+    </header>
     <div class="container">
       <table class="board"></table>
-      <div class="controls">
-        <button class="start-game">Start</button>
-        <button class="pause-game">Pause</button>
-        <h1>Score: <span class="score">0</span></h1>
-        <h1>Record: <span class="record">0</span></h1>
-      </div>
+      <aside>
+        <div class="controls">
+          <button class="start-game">Start game</button>
+          <button class="pause-game" style="display: none">Pause</button>
+        </div>
+        <div class="panel">
+          <p><span class="score">0</span><span>Score</span></p>
+          <p><span class="record">0</span><span>Record</span></p>
+        </div>
+      </aside>
     </div>
 
     <script src="snake-game.js"></script>

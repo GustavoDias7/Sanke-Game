@@ -167,8 +167,8 @@ function initSnakeGame() {
     const startGame = document.querySelector(".start-game");
     const pauseGame = document.querySelector(".pause-game");
     const speedGame = 300;
-    startGame.addEventListener("click", () => {
-      console.log("start");
+    startGame.addEventListener("click", (e) => {
+      e.target.classList.add("disabled");
       if (isGameOn) return;
       isGameOn = true;
       offsetInterval = setInterval(() => {
