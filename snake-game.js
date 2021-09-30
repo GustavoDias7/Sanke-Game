@@ -64,6 +64,7 @@ function initSnakeGame() {
 
   function setKeybordDirection() {
     document.addEventListener("keydown", (event) => {
+      navigator.vibrate(200);
       const keyName = event.code;
       if (keyName === "KeyS" && currDirection !== snakeDirection.turnUp()) {
         currDirection = snakeDirection.turnDown();
@@ -90,6 +91,7 @@ function initSnakeGame() {
     const buttons = document.querySelectorAll(".controls button");
     buttons.forEach((button) => {
       button.addEventListener("click", ({ target: { id } }) => {
+        navigator.vibrate(200);
         if (id === "down" && currDirection !== snakeDirection.turnUp()) {
           currDirection = snakeDirection.turnDown();
         } else if (
