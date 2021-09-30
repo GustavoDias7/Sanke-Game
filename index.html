@@ -16,15 +16,25 @@
     <div class="container">
       <table class="board"></table>
       <aside>
-        <div class="controls">
-          <button class="start-game">Start game</button>
-          <button class="pause-game" style="display: none">Pause</button>
+        <div class="buttons">
+          <button class="start-game">Start Game</button>
         </div>
+
         <div class="panel">
           <p><span class="score">0</span><span>Score</span></p>
           <p><span class="record">0</span><span>Record</span></p>
         </div>
       </aside>
+      <div class="controls">
+        <div>
+          <button id="up">&#9650;</button>
+        </div>
+        <div>
+          <button id="left">&#9664;</button>
+          <button id="down">&#9660;</button>
+          <button id="right">&#9654;</button>
+        </div>
+      </div>
     </div>
 
     <script src="snake-game.js"></script>

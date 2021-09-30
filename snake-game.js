@@ -1,11 +1,11 @@
 function initSnakeGame() {
-  let counter = 0;
   const board = document.querySelector(".board");
   let boardArea = [10, 10];
   let cells = generateCells(board, boardArea);
   let quantCells = cells.length;
   let snake = [11];
   let foodPosition = 0;
+  const speedGame = 400;
   let nextStep;
   let score = 0;
   const record = document.querySelector(".record");
@@ -86,6 +86,29 @@ function initSnakeGame() {
         return;
       }
     });
+
+    const buttons = document.querySelectorAll(".controls button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", ({ target: { id } }) => {
+        if (id === "down" && currDirection !== snakeDirection.turnUp()) {
+          currDirection = snakeDirection.turnDown();
+        } else if (
+          id === "right" &&
+          currDirection !== snakeDirection.turnLeft()
+        ) {
+          currDirection = snakeDirection.turnRight();
+        } else if (id === "up" && currDirection !== snakeDirection.turnDown()) {
+          currDirection = snakeDirection.turnUp();
+        } else if (
+          id === "left" &&
+          currDirection !== snakeDirection.turnRight()
+        ) {
+          currDirection = snakeDirection.turnLeft();
+        } else {
+          return;
+        }
+      });
+    });
   }
 
   function moveSnake() {
@@ -165,8 +188,7 @@ function initSnakeGame() {
   let isGameOn = false;
   function startGame() {
     const startGame = document.querySelector(".start-game");
-    const pauseGame = document.querySelector(".pause-game");
-    const speedGame = 300;
+    // const pauseGame = document.querySelector(".pause-game");
     startGame.addEventListener("click", (e) => {
       e.target.classList.add("disabled");
       if (isGameOn) return;
@@ -175,9 +197,9 @@ function initSnakeGame() {
         moveSnake();
       }, speedGame);
     });
-    pauseGame.addEventListener("click", () => {
-      setPauseGame();
-    });
+    // pauseGame.addEventListener("click", () => {
+    //   setPauseGame();
+    // });
   }
   function setPauseGame() {
     clearInterval(offsetInterval);

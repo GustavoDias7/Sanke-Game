@@ -23,7 +23,7 @@ aside {
   background-color: #ccc;
 }
 
-.controls button {
+.start-game {
   width: 100%;
   height: 40px;
   cursor: pointer;
@@ -34,11 +34,11 @@ aside {
   background-color: #8a46f0;
 }
 
-.controls button:hover {
+.start-game:hover {
   opacity: 0.7;
 }
 
-.controls button.disabled {
+.start-game.disabled {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -78,4 +78,50 @@ td {
 
 .food {
   background-color: #b78ff2 !important;
+}
+
+/* constrols */
+.controls {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+.controls div:nth-child(2) {
+  display: flex;
+}
+.controls button {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 2px;
+  margin: 2px;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background-color: #b78ff2;
+}
+.controls #up {
+  margin: 2px auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 430px;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 1.25rem;
+  }
+  td {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+  aside {
+    padding: 10px;
+  }
+  .panel p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
 }
