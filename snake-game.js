@@ -8,6 +8,10 @@ function initSnakeGame() {
   let foodPosition = 0;
   let nextStep;
   let score = 0;
+  const record = document.querySelector(".record");
+  let recordValue = localStorage.getItem("record") || 0;
+  record.innerHTML = recordValue;
+
   setSnakeBoard(snake);
   setFoodBoard();
   setKeybordDirection();
@@ -167,7 +171,6 @@ function initSnakeGame() {
       console.log("start");
       if (isGameOn) return;
       isGameOn = true;
-      console.log(isGameOn);
       offsetInterval = setInterval(() => {
         moveSnake();
       }, speedGame);
@@ -179,7 +182,12 @@ function initSnakeGame() {
   function setPauseGame() {
     clearInterval(offsetInterval);
     isGameOn = false;
-    console.log(isGameOn);
+
+    // update and set record
+    if (score > recordValue) {
+      localStorage.setItem("record", `${score}`);
+      record.innerHTML = localStorage.getItem("record");
+    }
   }
 }
 initSnakeGame();
