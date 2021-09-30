@@ -1,0 +1,36 @@
+.container {
+  width: 768px;
+  margin: auto;
+  display: flex;
+}
+
+.controls {
+  margin-left: 20px;
+}
+
+.board {
+  border-collapse: collapse;
+}
+
+tr {
+  background-color: #8a46f0;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 5px solid #402170;
+}
+
+.snake {
+  background-color: #9a00bd !important;
+}
+
+.snake-tail {
+  background-color: #ff7b00 !important;
+}
+
+.food {
+  background-color: #b78ff2 !important;
+}
